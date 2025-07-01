@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Foodies Toastmasters | Where Culinary Passion Meets Public Speaking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --maroon: #772432; /* Toastmasters red */
+            --blue: #004165; /* Toastmasters blue */
+            --gold: #F2DF74; /* Toastmasters gold */
+            --white: #FFFFFF;
+            --black: #000000;
+            --light-blue: #E6F0F7;
+            --spice: #D35400; /* Orange for spice */
+            --herb: #27AE60; /* Green for herbs */
+        }
+
+        /* NAVIGATION - Consistent with all pages */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 3rem;
+            background: rgba(0, 65, 101, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            margin-right: 1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        body {
+            font-family: 'Source Sans 3', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background-color: var(--white);
+            margin: 0;
+            padding: 0;
+            padding-top: 80px; /* Space for fixed header */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ABOUT-SPECIFIC STYLES */
+        .about-hero {
+            background: 
+                linear-gradient(to bottom, rgba(0, 65, 101, 0.85), rgba(119, 36, 50, 0.85)),
+                url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+        
+        .page-title {
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        
+        .mission-section {
+            background: var(--white);
+            padding: 60px 20px;
+        }
+        
+        .flavor-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        
+        .flavor-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--gold);
+            text-align: center;
+        }
+        
+        .flavor-icon {
+            font-size: 2.5rem;
+            color: var(--maroon);
+            margin-bottom: 20px;
+        }
+        
+        .meeting-structure {
+            background: var(--light-blue);
+            padding: 60px 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+        
+        .timeline-item {
+            padding-left: 60px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .food-theme {
+            background: 
+                linear-gradient(135deg, rgba(0, 65, 101, 0.9), rgba(119, 36, 50, 0.9)),
+                url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .role-card {
+            background: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            padding: 20px;
+            color: var(--black);
+        }
+        
+        .btn-join {
+            display: inline-block;
+            padding: 15px 30px;
+            background: var(--gold);
+            color: var(--black);
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .btn-join:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(242,223,116,0.4);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 0 0.5rem;
+            }
+            .page-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <header class="header">
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="images/foodies.png" alt="Foodies Toastmasters Logo" class="logo">
+                <img src="images/tmlogo.png" alt="Toastmasters International" class="logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="active"><i class="fas fa-utensils"></i> About</a></li>
+                    <li><a href="meetings.html"><i class="fas fa-calendar-alt"></i> Meetings</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <h1 class="page-title">About Foodies Toastmasters</h1>
+        <p class="page-subtitle">Where culinary passion meets public speaking excellence</p>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+        <div class="container">
+            <h2>Our Secret Recipe</h2>
+            <p>Founded in 2023, Foodies Toastmasters is a unique District 106 club blending the art of public speaking with the love of all things culinary. We're the first Toastmasters club specifically for food professionals and enthusiasts!</p>
+            
+            <div class="flavor-columns">
+                <div class="flavor-card">
+                    <div class="flavor-icon"><i class="fas fa-cheese"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To provide a supportive learning environment where food lovers develop communication and leadership skills through deliciously themed meetings.</p>
+                </div>
+                
+                <div class="flavor-card">
+                    <div class="flavor-icon"><i class="fas fa-pepper-hot"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>A world where every culinary professional can present their ideas as beautifully as they plate their dishes.</p>
+                </div>
+                
+                <div class="flavor-card">
+                    <div class="flavor-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Our Values</h3>
+                    <p>Flavorful feedback, well-seasoned speeches, and a welcoming table for all food enthusiasts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEETING STRUCTURE -->
+    <section class="meeting-structure">
+        <div class="container">
+            <h2>Our Meeting Flavors</h2>
+            <p>We meet twice monthly with a delicious variety of formats:</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <h3>Monthly Club Meeting</h3>
+                    <p>Traditional Toastmasters meeting with food-themed roles and evaluations, held at Larpenteur Estates party room and via Zoom.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <h3>Monthly Social Gathering</h3>
+                    <p>Casual networking at local eateries where we practice impromptu speaking over great food (think "Table Topics with Tapas").</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Hybrid Format</h3>
+                    <p>All meetings are accessible both in-person and virtually. Zoom link provided upon RSVP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOD-THEMED ROLES -->
+    <section class="food-theme">
+        <div class="container">
+            <h2>Our Special Ingredients</h2>
+            <p>Food-themed meeting roles that make learning extra flavorful:</p>
+            
+            <div class="role-grid">
+                <div class="role-card">
+                    <h3>Chef de Cuisine</h3>
+                    <p>(Toastmaster of the Day)</p>
+                    <p>Prepares the meeting's agenda and ensures all elements come together harmoniously.</p>
+                </div>
+                
+                <div class="role-card">
+                    <h3>Maître D'</h3>
+                    <p>(General Evaluator)</p>
+                    <p>Oversees the evaluation portion of the meeting with hospitality and grace.</p>
+                </div>
+                
+                <div class="role-card">
+                    <h3>Sous Chef</h3>
+                    <p>(Evaluator)</p>
+                    <p>Provides thoughtful feedback to help speakers refine their "recipes."</p>
+                </div>
+                
+                <div class="role-card">
+                    <h3>Expediter</h3>
+                    <p>(Timer)</p>
+                    <p>Keeps the meeting moving at the perfect pace - not too fast, not too slow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP SECTION -->
+    <section class="mission-section">
+        <div class="container">
+            <h2>Who Belongs in Our Kitchen?</h2>
+            <p>Our club welcomes all food enthusiasts, including:</p>
+            
+            <div class="flavor-columns" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="flavor-card" style="padding: 15px;">
+                    <p><i class="fas fa-user-tie"></i> Food Professionals</p>
+                </div>
+                <div class="flavor-card" style="padding: 15px;">
+                    <p><i class="fas fa-chef-hat"></i> Chefs & Cooks</p>
+                </div>
+                <div class="flavor-card" style="padding: 15px;">
+                    <p><i class="fas fa-flask"></i> Food Scientists</p>
+                </div>
+                <div class="flavor-card" style="padding: 15px;">
+                    <p><i class="fas fa-apple-alt"></i> Nutritionists</p>
+                </div>
+                <div class="flavor-card" style="padding: 15px;">
+                    <p><i class="fas fa-pencil-alt"></i> Food Writers</p>
+                </div>
+                <div class="flavor-card" style="padding: 15px;">
+                    <p><i class="fas fa-heart"></i> Food Enthusiasts</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="join.html" class="btn-join">Become a Member</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
