@@ -642,3 +642,15 @@ cite {
     width: 100%;
   }
 }
+.reason-content {
+  padding: 1.5rem;
+  color: var(--black); /* Sets default text color to black */
+}
+
+.reason-content h3 {
+  color: var(--primary-accent); /* Toastmasters red for headings */
+}
+
+.reason-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Elevate on hover */
+}
