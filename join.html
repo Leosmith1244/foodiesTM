@@ -3,6 +3,7 @@
 <head>
     <title>Join Foodies Toastmasters | Meet Our Charter Members</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --maroon: #772432; /* Toastmasters red */
@@ -14,7 +15,8 @@
             --spice: #D35400; /* Orange for spice */
             --herb: #27AE60; /* Green for herbs */
         }
-   /* NAVIGATION - Matches your main site */
+
+        /* NAVIGATION - Matches your main site */
         .header {
             position: fixed;
             top: 0;
@@ -75,8 +77,7 @@
             font-weight: 700;
         }
 
-        
-        body {
+                body {
             font-family: 'Source Sans 3', Arial, sans-serif;
             line-height: 1.6;
             color: var(--black);
@@ -257,14 +258,36 @@
                 right: 10px;
             }
         }
+    
     </style>
 </head>
 <body>
+    <!-- NAVIGATION -->
+    <header class="header">
+        <div class="navbar">
+            <div class="logo-container">
+                <img src="images/foodies.png" alt="Foodies Toastmasters Logo" class="logo">
+                <img src="images/tmlogo.png" alt="Toastmasters International" class="logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-utensils"></i> About</a></li>
+                    <li><a href="meetings.html"><i class="fas fa-calendar-alt"></i> Meetings</a></li>
+                    <li><a href="join.html" class="active"><i class="fas fa-user-plus"></i> Join</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
     <section class="hero">
         <h1 class="page-title">Meet Our Charter Members</h1>
         <p class="page-subtitle">The passionate foodies who brought this club to life with equal parts flavor and flair</p>
     </section>
 
+    <!-- MEMBER GRID -->
     <div class="members-grid">
         <!-- Member 1 -->
         <div class="member-card">
@@ -295,8 +318,7 @@
                 <span class="foodie-specialty">Global Cuisine</span>
             </div>
         </div>
-
-        <!-- Member 3 -->
+ <!-- Member 3 -->
         <div class="member-card">
             <div class="member-header">
                 <span class="member-badge">Sergeant at Arms</span>
@@ -521,11 +543,13 @@
             </div>
         </div>
     </div>
-
+       
+    
+    <!-- JOIN CTA -->
     <section class="join-cta">
         <h2>Ready to Join Our Culinary Speaking Journey?</h2>
         <p>Whether you're a professional chef, food scientist, or just someone who loves great food and great conversation, we have a seat at our table for you.</p>
-        <a href="#" class="btn-join">Reserve Your Spot Today</a>
+        <a href="contact.html" class="btn-join">Reserve Your Spot Today</a>
     </section>
 </body>
 </html>
